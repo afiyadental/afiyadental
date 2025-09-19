@@ -1,0 +1,1998 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Afiya Dental Care</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo-removebg-preview.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+ <style>
+        .service-main-container {
+            padding: 60px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .service-header-area {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .service-badge {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .service-main-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .service-main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a73e8, #6c5ce7);
+            border-radius: 2px;
+        }
+        
+        .service-description {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: #666;
+            font-size: 1.1rem;
+            font-family: 'SolaimanLipi', sans-serif;
+        }
+        
+        .service-filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .service-filter-btn {
+            background: white;
+            border: 2px solid #1a73e8;
+            color: #1a73e8;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'SolaimanLipi', sans-serif;
+        }
+        
+        .service-filter-btn:hover, .service-filter-btn.active {
+            background: #1a73e8;
+            color: white;
+        }
+        
+        .service-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-item-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-item-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-item-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #1a73e8, #6c5ce7);
+        }
+        
+        .service-img-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-item-card:hover .service-img {
+            transform: scale(1.05);
+        }
+        
+        .service-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .service-info-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            flex-grow: 1;
+            line-height: 1.4;
+            font-family: 'SolaimanLipi', sans-serif;
+        }
+        
+        .service-price-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .service-cost {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a73e8;
+        }
+        
+        .service-action-btn {
+            background: linear-gradient(90deg, #1a73e8, #6c5ce7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'SolaimanLipi', sans-serif;
+        }
+        
+        .service-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+        }
+        
+        .service-note {
+            background: #fff4e6;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #e67700;
+            margin-top: 15px;
+            border-left: 3px solid #ffa94d;
+            font-family: 'SolaimanLipi', sans-serif;
+        }
+        
+        @media (max-width: 1024px) {
+            .service-grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-main-title {
+                font-size: 2rem;
+            }
+            
+            .service-grid-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .service-info-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-main-container {
+                padding: 40px 15px;
+            }
+            
+            .service-main-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-description {
+                font-size: 1rem;
+            }
+            
+            .service-price-area {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .service-action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .service-filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-filter-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+
+
+
+
+
+
+
+             
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+          ;
+        }
+
+        .faq-header {
+            background-color: #1976D2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            font-size: 18px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #e3f2fd;
+        }
+
+      .faq-question::after {
+    content: "\276F"; /* ❯ heavy right-pointing angle quotation mark */  
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary);
+        }
+        
+        .highlight {
+            background-color: #FFF9C4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: #F44336;
+            font-weight: bold;
+        }
+
+
+
+             .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(4, 99, 250, 0.12);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #0463FA;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .pricing-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(4, 99, 250, 0.15);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(4, 99, 250, 0.25);
+        }
+        
+        .pricing-header {
+            padding: 28px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium .pricing-header {
+            background: linear-gradient(135deg, #0463FA 0%, #0455d9 100%);
+        }
+        
+        .medium .pricing-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .regular .pricing-header {
+            background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+        }
+        
+        .pricing-price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin: 20px 0;
+            text-align: center;
+            color: #0463FA;
+            padding: 0 20px;
+        }
+        
+        .pricing-features {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            background: #e6f2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #0463FA;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-weight: 700;
+            color: #0463FA;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-desc {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .pricing-footer {
+            padding: 20px;
+            text-align: center;
+            background: #f9fbfe;
+            border-top: 1px solid #eee;
+        }
+        
+        .best-value {
+            display: inline-block;
+            background: #0463FA;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .warranty-section {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 30px rgba(4, 99, 250, 0.15);
+            margin-bottom: 50px;
+        }
+        
+        .warranty-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0463FA;
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .warranty-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #0463FA;
+            border-radius: 2px;
+        }
+        
+        .warranty-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #f0f8ff;
+            border-left: 5px solid #0463FA;
+        }
+        
+        .warranty-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #0463FA;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .warranty-icon {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .warranty-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .warranty-text {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(4, 99, 250, 0.1);
+        }
+        
+        .warranty-text h4 {
+            color: #0463FA;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.2rem;
+        }
+        
+        .warranty-text p {
+            line-height: 1.7;
+            color: #555;
+            font-size: 1.05rem;
+        }
+        
+        .notes-section {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 12px 30px rgba(4, 99, 250, 0.15);
+        }
+        
+        .notes-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0463FA;
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .notes-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #0463FA;
+            border-radius: 2px;
+        }
+        
+        .notes-list {
+            list-style-type: none;
+        }
+        
+        .notes-list li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            border-left: 5px solid #0463FA;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.7;
+        }
+        
+        .notes-list li::before {
+            content: "•";
+            color: #0463FA;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 12px;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .pricing-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card {
+                max-width: 100%;
+            }
+            
+            .warranty-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .warranty-section, .notes-section {
+                padding: 25px 20px;
+            }
+            
+            .warranty-header, .notes-header {
+                font-size: 1.7rem;
+            }
+            
+            .pricing-price {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .pricing-header {
+                padding: 20px;
+                font-size: 1.3rem;
+            }
+            
+            .pricing-price {
+                font-size: 1.8rem;
+            }
+            
+            .pricing-features {
+                padding: 20px 15px;
+            }
+            
+            .feature {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .warranty-item {
+                padding: 20px 15px;
+            }
+            
+            .warranty-text {
+                padding: 15px;
+            }
+            
+            .warranty-title {
+                font-size: 1.2rem;
+            }
+            
+            .notes-list li {
+                padding: 15px;
+            }
+        }
+
+
+
+
+
+        .praaa {
+            color: #fff;
+       
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    .package-table {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+      background-image: linear-gradient(#fff, #fff),
+        linear-gradient(90deg, #3b82f6, #9333ea);
+    }
+
+    .package-table .title {
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #111827;
+      text-align: center;
+    }
+
+    .package-table .subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .package-table table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .package-table thead {
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      color: #fff;
+    }
+
+    .package-table th,
+    .package-table td {
+      padding: 16px 18px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .package-table tbody tr {
+      transition: all 0.3s ease;
+    }
+
+    .package-table tbody tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .package-table tbody tr:hover {
+      background: #f3f4f6;
+      transform: scale(1.01);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Quality Badges */
+    .quality {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .quality svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .quality.premium {
+      background: #fff7e6;
+      color: #b45309;
+      border: 1px solid #f59e0b;
+    }
+
+    .quality.medium {
+      background: #eef2ff;
+      color: #4338ca;
+      border: 1px solid #6366f1;
+    }
+
+    .quality.regular {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #34d399;
+    }
+
+    /* Price */
+    .price {
+      font-weight: 600;
+      color: #1f2937;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .price svg {
+      width: 18px;
+      height: 18px;
+      color: #16a34a;
+    }
+
+    /* 🔹 Mobile View: Card Style */
+    @media (max-width: 700px) {
+      .package-table table,
+      .package-table thead,
+      .package-table tbody,
+      .package-table th,
+      .package-table td,
+      .package-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .package-table thead {
+        display: none;
+      }
+
+      .package-table tbody tr {
+        margin-bottom: 20px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+
+      .package-table td {
+        text-align: left;
+        padding: 10px 0;
+        border: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      .package-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #374151;
+        margin-right: 10px;
+        flex: 0 0 90px; /* label এর জন্য ফিক্সড জায়গা */
+      }
+
+      /* ছোট আইকন + টেক্সট compact */
+      .quality svg,
+      .price svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .quality {
+        gap: 6px;
+        font-size: 14px;
+        padding: 4px 10px;
+      }
+
+      .price {
+        gap: 4px;
+        font-size: 14px;
+      }
+    }
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+     .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      width: 100%;
+      max-width: 350px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      user-select: none;
+    }
+    .card .before-img,
+    .card .after-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .card .after-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%; /* initial width: half before, half after */
+      overflow: hidden;
+    }
+    .card .after-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* align with before-image */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card .handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 4px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      cursor: ew-resize;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+    .card .handle::before,
+    .card .handle::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: #ffffff;
+      border: 2px solid #658ce0;
+      border-radius: 50%;
+    }
+    .card .handle::before {
+      left: -8px;
+    }
+    .card .handle::after {
+      right: -8px;
+    }
+    /* Animation for handle hover */
+    .card:hover .handle {
+      background: #658ce0;
+    }
+    @media (max-width: 768px) {
+      .card {
+        max-width: 90%;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>123 Street, New York, USA</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+012 345 6789</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0 text-primary">
+    
+            <img src="img/logo-removebg-preview.png" alt="" width="80px">
+        
+            </h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                 <a href="appointment.html" class="nav-item nav-link">Appointment</a>
+                  <a href="team.html" class="nav-item nav-link">Our Doctors</a>
+               
+                <div class="nav-item dropdown">
+                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="service-1.html" class="dropdown-item">ফাঁকা দাঁতের চিকিৎসা</a>
+                        <a href="Service-2.html" class="dropdown-item">রুট ক্যানেল চিকিৎসা</a>
+                        <a href="service-3.html" class="dropdown-item">ডেন্টাল ফিলিং</a>
+                        <a href="service-4.html" class="dropdown-item">আঁকা-বাঁকা দাঁতের চিকিৎসা</a>
+                        <a href="service-5.html" class="dropdown-item">স্কেলিং+পলিশিং</a>
+                        <a href="service-6.html" class="dropdown-item">নতুন দাঁত লাগানো</a>
+                        <a href="service-7.html" class="dropdown-item">দাঁত তোলা</a>
+                        <a href="service-8.html" class="dropdown-item">ডেন্টাল ইমপ্লান্ট</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/8801611112717" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
+           
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+<div class="service-main-container">
+    <div class="service-header-area">
+        <span class="service-badge">🦷 কম্পোজিট ভিনিয়ার ট্রিটমেন্ট একেকটি ফাঁকা দাঁতের জন্য Approximate খরচ  </span>
+       
+        <p class="service-description">প্রতিটি দাঁতের ফাঁকা বন্ধের খরচ
+ব্যবহৃত মান ও ম্যাটেরিয়ালের উপর নির্ভর করে।
+আপনার জন্য উপযুক্ত ভিনিয়ারটি বেছে নিন।
+</p>
+    </div>
+    
+    
+    
+ 
+
+  <div class="package-table">
+    <h1 class="title"></h1>
+    <p class="subtitle"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>কোয়ালিটি</th>
+          <th>দাম</th>
+          <th>টেকসই</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="কোয়ালিটি">
+            <span class="quality premium">
+              <!-- 🏆 Trophy Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 2v2h3v3c0 3.31-2.69 6-6 6s-6-2.69-6-6V4h3V2h6zm-1 14.93V22H9v-5.07A8.001 8.001 0 0112 6c1.85 0 3.55.63 4.9 1.69L15 10.59V9h-2V7h4v4h-2v-1.59l1.1 1.1A7.962 7.962 0 0117 13c0 1.48-.4 2.87-1 4.07z"/>
+              </svg>
+              Premium Quality
+            </span>
+          </td>
+          <td data-label="দাম">
+            <span class="price">
+              <!-- 💰 Coin Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 2c4.962 0 9 4.038 9 9s-4.038 9-9 9-9-4.038-9-9 4.038-9 9-9z"/>
+              </svg>
+              6,000 টাকা
+            </span>
+          </td>
+          <td data-label="টেকসই">১০–১৫ বছর</td>
+        </tr>
+
+        <tr>
+          <td data-label="কোয়ালিটি">
+            <span class="quality medium">
+              <!-- ⭐ Star Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l2.39 7.26H22l-6.19 4.5L17.64 22 12 17.77 6.36 22l1.83-8.24L2 9.26h7.61z"/>
+              </svg>
+              Medium Quality
+            </span>
+          </td>
+          <td data-label="দাম">
+            <span class="price">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 2c4.962 0 9 4.038 9 9s-4.038 9-9 9-9-4.038-9-9 4.038-9 9-9z"/>
+              </svg>
+              4,500 টাকা
+            </span>
+          </td>
+          <td data-label="টেকসই">৫–৭ বছর</td>
+        </tr>
+
+        <tr>
+          <td data-label="কোয়ালিটি">
+            <span class="quality regular">
+              <!-- 💡 Bulb Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 21h6v2H9v-2zm3-20C7.48 1 3 5.48 3 11c0 3.53 1.94 6.61 4.8 8.27L9 22h6l1.2-2.73C19.06 17.61 21 14.53 21 11c0-5.52-4.48-10-9-10z"/>
+              </svg>
+              Regular Quality
+            </span>
+          </td>
+          <td data-label="দাম">
+            <span class="price">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 2c4.962 0 9 4.038 9 9s-4.038 9-9 9-9-4.038-9-9 4.038-9 9-9z"/>
+              </svg>
+              3,000 টাকা
+            </span>
+          </td>
+          <td data-label="টেকসই">৩–৫ বছর</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+ 
+
+
+
+
+
+
+  <!-- video -->
+
+
+
+  <div class="video-container">
+        <div class="video-header">
+            <div class="video-title"> Composite Veneer – ধাপে ধাপে পুরো প্রক্রিয়া</div>
+            <div class="video-controls">
+                <button class="control-btn"><i class="fas fa-expand-arrows-alt"></i></button>
+                <button class="control-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <div class="animated-border"></div>
+        
+        <div class="video-wrapper">
+            <video class="video-player" id="mainVideo">
+                <source src="video/SocialVideo_1757763454449.mp4" type="video/mp4">
+             
+            </video>
+        </div>
+        
+        <div class="custom-controls">
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="time-controls">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+            
+            <div class="main-controls">
+                <div class="left-controls">
+                    <button class="play-pause" id="playPause">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    
+                    <div class="volume-control">
+                        <button class="control-btn" id="volumeBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+                    </div>
+                </div>
+                
+                <div class="right-controls">
+                    <div class="playback-speed">
+                        <select class="speed-select" id="speedSelect">
+                            <option value="0.5">0.5x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="2">2x</option>
+                        </select>
+                    </div>
+                    
+                    <button class="fullscreen-btn" id="fullscreenBtn">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-info">
+            <p class="video-description">
+                
+
+            ফাঁকা বা অসমান দাঁতের সমস্যায় জটিল চিকিৎসা লাগে না। Composite Veneer দিয়ে ন্যাচারাল লুক, 
+            টেকসই ফলাফল এবং আসল দাঁতের কোন কাটাছেঁড়া বা রক্তপাত ছাড়াই চিকিৎসা করা যায়।
+
+            </p>
+            
+        </div>
+        
+      
+
+
+    </div>
+
+
+ <div class="service-header-area">
+        <span class="service-badge">🦷 আগে ও পরের কিছু পার্থক্য </span>
+       
+        <p class="service-description">
+</p>
+    </div>
+
+
+<div class="cards-container">
+  <div class="card" data-before="img/bbb44.jpg" data-after="img/aa44.jpg"></div>
+  <div class="card" data-before="img/b222.jpg" data-after="img\aa222.jpg"></div>
+  <div class="card" data-before="img/b333.jpg" data-after="img/aa333.jpg"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="warranty-section">
+
+              
+            <h2 class="warranty-header">
+                <span class="service-badge">🦷 Veneer Warranty Policy </span>
+            </h2>
+            
+            <!-- Premium Warranty -->
+            <div class="warranty-item">
+                <div class="warranty-title">
+                    <span class="warranty-icon"><i class="fas fa-crown"></i></span>
+                    Premium Quality Veneer
+                </div>
+                <div class="warranty-content">
+                    <div class="warranty-text">
+                        <h4>বাংলা</h4>
+                        <p>ভবিষ্যতে যেকোনো সময় ভিনিয়ার ভেঙে গেলে বা নষ্ট হলে, রোগী <strong>একবার ফ্রি সার্ভিস</strong> পাবেন।</p>
+                    </div>
+                    <div class="warranty-text">
+                        <h4>English</h4>
+                        <p>In case of damage or failure at any point in the future, patients will receive <strong>one-time free repair or replacement</strong> service.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Medium Warranty -->
+            <div class="warranty-item">
+                <div class="warranty-title">
+                    <span class="warranty-icon"><i class="fas fa-star"></i></span>
+                    Medium Quality Veneer
+                </div>
+                <div class="warranty-content">
+                    <div class="warranty-text">
+                        <h4>বাংলা</h4>
+                        <p>সাধারণত কোনো ওয়ারেন্টি নেই, তবে প্রয়োজনে স্বল্প খরচে রিপেয়ার করা যাবে।</p>
+                    </div>
+                    <div class="warranty-text">
+                        <h4>English</h4>
+                        <p>No standard warranty. However, repair or replacement can be provided at a minimal cost if required.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Regular Warranty -->
+            <div class="warranty-item">
+                <div class="warranty-title">
+                    <span class="warranty-icon"><i class="fas fa-lightbulb"></i></span>
+                    Regular Quality Veneer
+                </div>
+                <div class="warranty-content">
+                    <div class="warranty-text">
+                        <h4>বাংলা</h4>
+                        <p>কোনো ওয়ারেন্টি নেই, তবে প্রয়োজনে রিপেয়ার/রিপ্লেসমেন্ট করা যাবে।</p>
+                    </div>
+                    <div class="warranty-text">
+                        <h4>English</h4>
+                        <p>No warranty. Repair or replacement is possible upon request with applicable charges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <h2 class="notes-header">Extra Notes</h2>
+            <ul class="notes-list">
+                <li>বাংলা: ওয়ারেন্টি শুধু ভিনিয়ারের কাজের জন্য, দাঁতের নিজস্ব সমস্যার জন্য নয়।<br>
+                    English: Warranty covers veneer-related issues only, not natural tooth conditions.</li>
+                <li>বাংলা: ডাক্তারের নির্দেশনা না মানলে বা দাঁত দিয়ে শক্ত জিনিস কামড়ালে ওয়ারেন্টি প্রযোজ্য হবে না।<br>
+                    English: Negligence or misuse (such as biting on hard objects) voids the warranty.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- questionns -->
+
+         <div class="container">
+        <h1>কম্পোজিট ভিনিয়ার সম্পর্কে FAQ</h1>
+        
+        <div class="faq-container">
+            <div class="faq-header">কম্পোজিট ভিনিয়ার সম্পর্কে কিছু সাধারণ প্রশ্ন ও উত্তর:</div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ার কি?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ার হল দাঁতের সামনে লাগানোর একটি পাতলা প্রলেপ যা কম্পোজিট রেসিন material দিয়ে তৈরি। এটি দাঁতের রং, আকার বা দৈর্ঘ্য উন্নত করতে ব্যবহার করা হয়। এটি সরাসরি দাঁতে প্রয়োগ করা হয় এবং ডেন্টিস্ট এটি শেপ ও পলিশ করে প্রাকৃতিক দাঁতের মতো দেখাতে পারেন।</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কাদের জন্য কম্পোজিট ভিনিয়ার উপযুক্ত?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ার নিম্নলিখিত ব্যক্তিদের জন্য উপযুক্ত:</p>
+                <ul>
+                  <li>দাঁতের রং পরিবর্তন করতে চাইলে</li>
+                  <li>দাঁতের মধ্যে ছোট ফাঁক থাকলে</li>
+                  <li>ভাঙা বা চিপড দাঁত থাকলে</li>
+                  <li>দাঁতের আকৃতি অস্বাভাবিক হলে</li>
+                  <li>হালকা থেকে মাঝারি crookedness ঠিক করতে</li>
+                  <li>যারা porcelain veneers এর সস্তা বিকল্প খুঁজছেন</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ারের সুবিধা কি কি?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ারের অনেক সুবিধা রয়েছে:</p>
+                <ul>
+                  <li>প্রাকৃতিক দাঁতের মতো দেখায়</li>
+                  <li>একটি non-invasive পদ্ধতি (কম দাঁত কাটা প্রয়োজন)</li>
+                  <li>সাধারণত মাত্র এক appointment এ সম্পন্ন করা যায়</li>
+                  <li>পোরসেলিন ভিনিয়ারের তুলনায় কম ব্যয়বহুল</li>
+                  <li>সামান্য damage হলে সহজে repair করা যায়</li>
+                  <li>বিভিন্ন রং available, প্রাকৃতিক দাঁতের সাথে match করা যায়</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ারের অসুবিধা কি কি?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ারের কিছু সীমাবদ্ধতাও রয়েছে:</p>
+                <ul>
+                  <li>পোরসেলিন ভিনিয়ারের তুলনায় কম স্থায়ী (৫-৭ বছর)</li>
+                  <li>দাগ প্রতিরোধী নয়, কফি, চা, ওয়াইন ইত্যাদি থেকে দাগ হতে পারে</li>
+                  <li>পোরসেলিনের তুলনায় কম শক্তিশালী</li>
+                  <li>সময়ের সাথে পরিবর্তিত হতে পারে</li>
+                  <li>নিয়মিত পলিশিং প্রয়োজন</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ারের যত্ন কিভাবে নিতে হয়?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ারের দীর্ঘস্থায়ীতা বজায় রাখতে:</p>
+                <ul>
+                  <li>নিয়মিত ব্রাশ ও ফ্লস করুন</li>
+                  <li>অ্যালকোহল-মুক্ত mouthwash ব্যবহার করুন</li>
+                  <li>দাঁত grinding এড়িয়ে চলুন, প্রয়োজন হলে night guard ব্যবহার করুন</li>
+                  <li>কড়া বা শক্ত খাবার কামড়ানো এড়িয়ে চলুন</li>
+                  <li>ধূমপান এড়িয়ে চলুন</li>
+                  <li>নিয়মিত ডেন্টাল চেকআপ করুন</li>
+                  <li>প্রতি ৬ মাসে professional polishing করান</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ার লাগানোর আগে কি কি করতে হবে?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ার লাগানোর আগে:</p>
+                <ul>
+                  <li>ডেন্টিস্টের সাথে পরামর্শ করুন</li>
+                  <li>আপনার প্রত্যাশা নিয়ে আলোচনা করুন</li>
+                  <li>দাঁতের সম্পূর্ণ পরীক্ষা করান</li>
+                  <li>প্রয়োজন হলে dental cleaning করান</li>
+                  <li>কোনো dental সমস্যা (যেমন cavity, gum disease) থাকলে আগে treatment করান</li>
+                  <li>ভিনিয়ারের রং নির্বাচন করুন</li>
+                  <li>খরচ এবং treatment plan সম্পর্কে জানুন</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ার লাগানোর পর কি কি করতে হবে?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ার লাগানোর পরে:</p>
+                <ul>
+                  <li>প্রথম ২৪ ঘন্টা staining foods এবং beverages এড়িয়ে চলুন</li>
+                  <li>প্রথম কয়েক দিন নরম খাবার খান</li>
+                  <li>নির্দেশিত oral hygiene routine অনুসরণ করুন</li>
+                  <li>কড়া খাবার কামড়ানো এড়িয়ে চলুন</li>
+                  <li>নখ, কলম বা অন্য কোনো কঠিন জিনিস কামড়ানো এড়িয়ে চলুন</li>
+                  <li>নিয়মিত ডেন্টাল ভিজিট বজায় রাখুন</li>
+                  <li>কোনো সমস্যা দেখা দিলে সঙ্গে সঙ্গে ডেন্টিস্টকে জানান</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ার কতদিন স্থায়ী হয়?</div>
+              <div class="faq-answer">
+                <p>সঠিক যত্ন নিলে কম্পোজিট ভিনিয়ার সাধারণত <span class="highlight">৫ থেকে ৭ বছর</span> স্থায়ী হয়। তবে কিছু ক্ষেত্রে এটি ১০ বছর পর্যন্তও স্থায়ী হতে পারে। এর স্থায়িত্ব নির্ভর করে:</p>
+                <ul>
+                  <li>ব্যক্তির oral hygiene habit এর উপর</li>
+                  <li>খাদ্যাভ্যাস (staining foods এবং hard foods খাওয়া)</li>
+                  <li>দাঁত grinding বা clenching করা</li>
+                  <li>ডেন্টিস্টের দক্ষতা এবং ব্যবহৃত materials এর মানের উপর</li>
+                  <li>নিয়মিত maintenance এবং professional care</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">কম্পোজিট ভিনিয়ার লাগানোর পর কি কি খাওয়া যাবে না?</div>
+              <div class="faq-answer">
+                <p>কম্পোজিট ভিনিয়ার লাগানোর পর নিম্নলিখিত খাবার ও পানীয় সীমিত করা উচিত:</p>
+                <ul>
+                  <li class="warning">কফি এবং চা</li>
+                  <li class="warning">রেড ওয়াইন</li>
+                  <li class="warning">সোডা এবং কলা</li>
+                  <li class="warning">বেরি (ব্লুবেরি, রাস্পবেরি, ব্ল্যাকবেরি)</li>
+                  <li class="warning">সয়া সস এবং কেচাপ</li>
+                  <li class="warning">কারি এবং হলুদ</li>
+                  <li class="warning">আইসকিউব বা অন্যান্য শক্ত বস্তু</li>
+                  <li class="warning">স্টিকি ক্যান্ডি এবং ক্যারামেল</li>
+                </ul>
+                <p>এইসব খাবার খাওয়ার পর সঙ্গে সঙ্গে পানি দিয়ে কুলি করুন বা ব্রাশ করুন।</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">টেক ডেন্টালের ০২ বছরের ওয়ারেন্টি কিভাবে কাজ করে?</div>
+              <div class="faq-answer">
+                <p>টেক ডেন্টালের ২ বছরের ওয়ারেন্টি নিম্নলিখিতভাবে কাজ করে:</p>
+                <ul>
+                  <li>ওয়ারেন্টি সময়কাল: ভিনিয়ার স্থাপনের তারিখ থেকে ২ বছর</li>
+                  <li>কভারেজ: manufacturing defects, চিপিং, বা premature staining</li>
+                  <li>শর্তাবলী: নিয়মিত ডেন্টাল চেকআপ (৬ মাসে একবার) এবং proper oral hygiene বজায় রাখতে হবে</li>
+                  <li>কভার হয় না: accidents, trauma, বা improper use এর কারণে damage</li>
+                  <li>ওয়ারেন্টি claim করতে: receipt এবং treatment documentation প্রয়োজন</li>
+                  <li>কি পাবেন: free repair বা replacement (material cost কভার, labor charges হতে পারে)</li>
+                </ul>
+                <p>ওয়ারেন্টির বিস্তারিত তথ্যের জন্য টেক ডেন্টালের সাথে সরাসরি যোগাযোগ করুন।</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<!-- appoinment -->
+
+
+<div class="apt-section-container">
+    <div class="apt-main-title">
+        <h2>আপনার অ্যাপয়েন্টমেন্ট বুক করুন</h2>
+        <p>আমাদের টিমের সাথে অ্যাপয়েন্টমেন্ট বুক করার জন্য আপনার পছন্দের মাধ্যমটি বেছে নিন</p>
+    </div>
+
+    <div class="apt-options-wrapper">
+        <!-- WhatsApp Option -->
+        <div class="apt-option-card">
+            <div class="apt-icon-container">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3 class="apt-option-title">WhatsApp এর মাধ্যমে বুকিং</h3>
+            <p class="apt-option-desc">দ্রুত অ্যাপয়েন্টমেন্ট বুকিং এবং তাৎক্ষণিক প্রতিক্রিয়ার জন্য সরাসরি WhatsApp এ আমাদের বার্তা পাঠান।</p>
+            <a href="https://wa.me/8801611112717" class="apt-action-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> এখনি চ্যাট করুন
+            </a>
+        </div>
+
+        <!-- Phone Call Option -->
+        <div class="apt-option-card">
+            <div class="apt-icon-container">
+                <i class="fas fa-phone"></i>
+            </div>
+            <h3 class="apt-option-title">সরাসরি ফোন করুন</h3>
+            <p class="apt-option-desc">ব্যক্তিগতকৃত বুকিং সহায়তার জন্য আমাদের অ্যাপয়েন্টমেন্ট সমন্বয়কারীর সাথে কথা বলুন।</p>
+            <a href="tel:+880 1611-112717" class="apt-action-button">
+                <i class="fas fa-phone"></i> এখনি কল করুন
+            </a>
+        </div>
+
+        <!-- Email Option -->
+        <div class="apt-option-card">
+            <div class="apt-icon-container">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="apt-option-title">ইমেইল পাঠান</h3>
+            <p class="apt-option-desc">আপনার পছন্দের তারিখ এবং সময় সহ আমাদের একটি ইমেইল পাঠান, এবং আমরা আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করব।</p>
+            <a href="mailto:afiyadentalcare@gmail.com?subject=Appointment Request" class="apt-action-button">
+                <i class="fas fa-envelope"></i> ইমেইল পাঠান
+            </a>
+        </div>
+    </div>
+
+   
+</div>
+    <!-- Appointment End -->
+
+
+
+
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4"> রিভিউ সমুহ</p>
+                <h1>আমাদের রোগিদের মতামত</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>আফিয়া ডেন্টাল কেয়ারে আমার অভিজ্ঞতা অসাধারণ ছিল। ডাক্তাররা খুবই যত্নশীল এবং পরিবেশটি আরামদায়ক।</p>
+                        <h5 class="mb-1">Mst Sumaiya</h5>
+                        <span class="fst-italic"></span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>এখানে চিকিৎসা নেওয়া সত্যিই সহজ এবং নির্ভরযোগ্য। আমি পুরো প্রক্রিয়া জুড়ে খুবই সন্তুষ্ট।</p>
+                        <h5 class="mb-1">Yeasir Arafat</h5>
+                        <span class="fst-italic"></span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>আধুনিক প্রযুক্তি এবং পেশাদার ডাক্তারদের সমন্বয়ে আমার দাঁতের যত্ন পেয়েছি খুব ভালোভাবে।</p>
+                        <h5 class="mb-1">Hasinur Islam</h5>
+                        <span class="fst-italic"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+        
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">আমাদের ঠিকানা ও যোগাযোগ</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>
+                        ডাচ বাংলা এটিএম বুথ সংলগ্ন, 
+                        (রান্নাঘর রেস্টুরেন্টের পাশে),চৌড়হাস মোড়,কুষ্টিয়া।</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+88 01611-112717</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>afiyadentalcare@gmail.com</p>
+                    <div class="d-flex pt-2">
+                       
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/afiyadentalcare"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">আমাদের সেবা সমূহ</h5>
+                    <a class="btn btn-link" href="service-1.html">ফাঁকা দাঁতের চিকিৎসা</a>
+                    <a class="btn btn-link" href="Service-2.html">রুট ক্যানেল চিকিৎসা</a>
+                    <a class="btn btn-link" href="service-3.html">ডেন্টাল ফিলিং</a>
+                    <a class="btn btn-link" href="service-4.html">আঁকা-বাঁকা দাঁতের চিকিৎসা</a>
+                    <a class="btn btn-link" href="service-5.html">স্কেলিং+পলিশিং</a>
+                     <a class="btn btn-link" href="service-5.html">নতুন দাঁত লাগানো</a>
+                    <a class="btn btn-link" href="service-6.html">দাঁত তোলা</a>
+                    <a class="btn btn-link" href="service-7.html">ডেন্টাল ইমপ্লান্ট</a>
+                  
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="about.html">About</a>
+                    <a class="btn btn-link" href="appointment.html">Appointment</a>
+                    <a class="btn btn-link" href="team.html">Our Doctors</a>
+                    <a class="btn btn-link" href="service.html">Services</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
+                   
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">আফিয়া ডেন্টাল কেয়ার</h5>
+                    <p>বিশ্বমানের চিকিৎসা, আধুনিক প্রযুক্তি আর অভিজ্ঞ ডেন্টিস্টদের নিবেদিত যত্নে আমরা গড়ে তুলি আপনার সুস্থ দাঁত আর আত্মবিশ্বাসী হাসি।</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy;<a class="border-bottom" href="#">Afiya Dental Care</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://www.facebook.com/smacktechofficial">Shahin Extra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+       
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ফিল্টার ফাংশনালিটি
+        const serviceFilterButtons = document.querySelectorAll('.service-filter-btn');
+        const serviceItemCards = document.querySelectorAll('.service-item-card');
+        
+        serviceFilterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // সক্রিয় বাটন আপডেট
+                serviceFilterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                // কার্ড ফিল্টারিং
+                serviceItemCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // অ্যানিমেশন
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        serviceItemCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // কার্ডগুলিকে এলোমেলোভাবে দৃশ্যমান করতে
+        setTimeout(() => {
+            serviceItemCards.forEach(card => {
+                card.classList.add('visible');
+            });
+        }, 100);
+        
+        // অ্যাপয়েন্টমেন্ট বাটন ক্লিক ইভেন্ট
+        const serviceActionButtons = document.querySelectorAll('.service-action-btn');
+        
+        serviceActionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const serviceName = button.getAttribute('data-service');
+                alert(`আপনি "${serviceName}" সার্ভিসের জন্য অ্যাপয়েন্টমেন্ট করতে চান। এই ফিচারটি সম্পূর্ণরূপে সক্রিয় হলে আপনি সরাসরি অ্যাপয়েন্টমেন্ট বুক করতে পারবেন।`);
+            });
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const questions = document.querySelectorAll('.faq-question');
+
+        questions.forEach(question => {
+          question.addEventListener('click', () => {
+            // Close all other open answers
+            questions.forEach(q => {
+              if(q !== question){
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('show');
+              }
+            });
+
+            // Toggle current answer
+            question.classList.toggle('active');
+            question.nextElementSibling.classList.toggle('show');
+          });
+        });
+   
+
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function(){
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const beforeSrc = card.getAttribute('data-before');
+      const afterSrc = card.getAttribute('data-after');
+
+      // create before img
+      const beforeImg = document.createElement('img');
+      beforeImg.src = beforeSrc;
+      beforeImg.classList.add('before-img');
+      beforeImg.style.width = '100%';
+      beforeImg.style.height = 'auto';
+      beforeImg.style.objectFit = 'cover';
+      card.appendChild(beforeImg);
+
+      // after wrapper
+      const afterWrapper = document.createElement('div');
+      afterWrapper.classList.add('after-wrapper');
+      const afterImg = document.createElement('img');
+      afterImg.src = afterSrc;
+      afterImg.classList.add('after-img');
+      afterWrapper.appendChild(afterImg);
+      card.appendChild(afterWrapper);
+
+      // handle
+      const handle = document.createElement('div');
+      handle.classList.add('handle');
+      card.appendChild(handle);
+
+      // interaction
+      let dragging = false;
+
+      const startDrag = (e) => {
+        dragging = true;
+        e.preventDefault();
+      };
+      const stopDrag = () => {
+        dragging = false;
+      };
+      const doDrag = (e) => {
+        if (!dragging) return;
+        let rect = card.getBoundingClientRect();
+        let x;
+        if (e.touches) {
+          x = e.touches[0].clientX - rect.left;
+        } else {
+          x = e.clientX - rect.left;
+        }
+        if (x < 0) x = 0;
+        if (x > rect.width) x = rect.width;
+        let percent = x / rect.width * 100;
+        afterWrapper.style.width = percent + '%';
+        handle.style.left = percent + '%';
+      };
+
+      handle.addEventListener('mousedown', startDrag);
+      handle.addEventListener('touchstart', startDrag);
+
+      window.addEventListener('mouseup', stopDrag);
+      window.addEventListener('touchend', stopDrag);
+      window.addEventListener('touchcancel', stopDrag);
+
+      window.addEventListener('mousemove', doDrag);
+      window.addEventListener('touchmove', doDrag);
+    });
+  });
+
+</script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
