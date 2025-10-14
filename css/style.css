@@ -2017,276 +2017,257 @@
 
 
 
-
-   .ser1 {
-      height: 100%; 
-      margin: 20px; 
-      background: #f3f8fc; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      overflow: hidden;
-      min-height: 70vh;
+   .serG1 {
+      font-family: "Noto Sans Bengali", sans-serif;
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 30px 10px;
       position: relative;
+      overflow-x: hidden;
     }
-    
-    .ser2 {
-      width: 100%; 
-      max-width: 1100px;
+
+    .serG1::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(120, 180, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(120, 180, 255, 0.1) 0%, transparent 20%);
+      z-index: -1;
+    }
+
+    .serG2 {
+      background: linear-gradient(135deg, #eaf2ff 0%, #d5e6ff 100%);
+      border: 2px solid #c8ddff;
+      border-radius: 30px;
+      padding: 12px 25px;
+      color: #0062ff;
+      font-weight: 700;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(0, 98, 255, 0.1);
       position: relative;
+      overflow: hidden;
       z-index: 1;
     }
-    
-    .ser3 {
-      text-align: center; 
-      margin-bottom: 40px;
+
+    .serG2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.7s ease;
+      z-index: -1;
     }
-    
-    .ser4 {
-      display: inline-block; 
-      border: 1px solid #3b82f6; 
-      border-radius: 50px; 
-      padding: 10px 25px; 
-      color: #3b82f6; 
-      font-weight: 600; 
-      margin-bottom: 15px; 
-      background: rgba(59,130,246,0.1);
-      animation: ser10 3s ease-in-out infinite;
+
+    .serG2:hover::before {
+      left: 100%;
     }
-    
-    .ser5 {
-      color: #0f1724; 
-      font-weight: 700; 
-      font-size: 32px; 
-      margin: 0;
-      animation: ser11 4s ease-in-out infinite;
+
+    .serG3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
     }
-    
-    .ser6 {
-      display: grid; 
-      grid-template-columns: repeat(3, 1fr); 
-      gap: 18px;
+
+    @media (min-width: 768px) {
+      .serG3 {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        max-width: 900px;
+      }
     }
-    
-    .ser7 {
-      background: #e9f1f8; 
-      border-radius: 12px; 
-      border: 2px solid rgb(93, 91, 255);
-      padding: 28px 18px; 
-      text-align: center; 
-      box-shadow: 0 0 0 1px rgba(15,23,36,0.03) inset; 
-      transition: all 0.3s ease; 
-      min-height: 110px; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      justify-content: center; 
-      cursor: pointer; 
-      text-decoration: none; 
-      color: inherit; 
-      position: relative; 
+
+    .serG4, .serG5, .serG6, .serG7, .serG8, .serG9, .serG10, .serG11 {
+      background: linear-gradient(145deg, #ffffff, #eef4ff);
+      border: 1.5px solid #b7d3ff;
+      border-radius: 16px;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
       overflow: hidden;
-      animation: ser12 6s ease-in-out infinite;
-    }
-    
-    .ser7:nth-child(1) { animation-delay: 0s; }
-    .ser7:nth-child(2) { animation-delay: 0.5s; }
-    .ser7:nth-child(3) { animation-delay: 1s; }
-    .ser7:nth-child(4) { animation-delay: 1.5s; }
-    .ser7:nth-child(5) { animation-delay: 2s; }
-    .ser7:nth-child(6) { animation-delay: 2.5s; }
-    .ser7:nth-child(7) { animation-delay: 3s; }
-    .ser7:nth-child(8) { animation-delay: 3.5s; }
-    .ser7:nth-child(9) { animation-delay: 4s; }
-    
-    .ser7:active {
-      transform: scale(0.997);
-    } 
-    
-    .ser7:hover {
-      transform: translateY(-6px) scale(1.02); 
-      box-shadow: 0 15px 30px rgba(2,6,23,0.1); 
-      animation-play-state: paused;
-    } 
-    
-    .ser8 {
-      height: 60px; 
-      margin-bottom: 12px; 
-      object-fit: contain; 
-      transition: all 0.3s ease;
-      animation: ser13 4s ease-in-out infinite;
-    }
-    
-    .ser7:hover .ser8 {
-      transform: scale(1.2) rotate(5deg); 
-      animation-play-state: paused;
-    }
-    
-    .ser9 {
-      font-size: 15px; 
-      color: #0f1724; 
-      text-decoration: none;
-      line-height: 1.25; 
-      white-space: pre-wrap; 
-      font-weight: 500;
-      animation: ser14 5s ease-in-out infinite;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 6px 15px rgba(0, 98, 255, 0.08);
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
     }
 
-    /* অটো অ্যানিমেশন */
-    @keyframes ser10 {
-      0%, 100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 rgba(59,130,246,0.3); }
-      50% { transform: scale(1.05) rotate(2deg); box-shadow: 0 0 20px rgba(59,130,246,0.6); }
-    }
-    
-    @keyframes ser11 {
-      0%, 100% { text-shadow: 0 2px 4px rgba(0,0,0,0.1); transform: translateY(0); }
-      50% { text-shadow: 0 4px 15px rgba(59,130,246,0.4); transform: translateY(-3px); }
-    }
-    
-    @keyframes ser12 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); background: #e9f1f8; }
-      25% { transform: translateY(-5px) rotate(0.5deg); background: #e6eff7; }
-      50% { transform: translateY(0px) rotate(0deg); background: #e9f1f8; }
-      75% { transform: translateY(-3px) rotate(-0.5deg); background: #ecf3f9; }
-    }
-    
-    @keyframes ser13 {
-      0%, 100% { transform: scale(1) rotate(0deg) translateY(0); filter: brightness(1); }
-      50% { transform: scale(1.1) rotate(3deg) translateY(-2px); filter: brightness(1.1) drop-shadow(0 5px 10px rgba(59,130,246,0.3)); }
-    }
-    
-    @keyframes ser14 {
-      0%, 100% { color: #0f1724; transform: scale(1); }
-      50% { color: #3b82f6; transform: scale(1.05); }
+    .serG4.animate-in, .serG5.animate-in, .serG6.animate-in, .serG7.animate-in, 
+    .serG8.animate-in, .serG9.animate-in, .serG10.animate-in, .serG11.animate-in {
+      animation: serG12 0.7s ease-out forwards;
     }
 
-    /* ব্যাকগ্রাউন্ড অ্যানিমেশন */
-    .ser1::before {
-      content: ''; 
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: linear-gradient(45deg, transparent, rgba(59,130,246,0.03), transparent); 
-      animation: ser15 8s linear infinite;
-      z-index: 0;
-    }
-    
-    @keyframes ser15 {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
+    .serG4 { animation-delay: 0.1s; }
+    .serG5 { animation-delay: 0.2s; }
+    .serG6 { animation-delay: 0.3s; }
+    .serG7 { animation-delay: 0.4s; }
+    .serG8 { animation-delay: 0.5s; }
+    .serG9 { animation-delay: 0.6s; }
+    .serG10 { animation-delay: 0.7s; }
+    .serG11 { animation-delay: 0.8s; }
 
-    /* পালস ডটস */
-    .ser7::after {
-      content: ''; 
-      position: absolute; 
-      width: 8px; 
-      height: 8px; 
-      background: #3b82f6; 
-      border-radius: 50%; 
-      opacity: 0; 
-      animation: ser16 3s infinite;
-    }
-    
-    .ser7:nth-child(odd)::after {
-      top: 10px; 
-      left: 10px; 
-      animation-delay: 0s;
-    }
-    
-    .ser7:nth-child(even)::after {
-      top: 10px; 
-      right: 10px; 
-      animation-delay: 1.5s;
-    }
-    
-    @keyframes ser16 {
-      0% { transform: scale(0); opacity: 0.8; }
-      50% { transform: scale(2); opacity: 0; }
-      100% { transform: scale(3); opacity: 0; }
-    }
-
-    /* মোবাইল রেসপনসিভ স্টাইল */
-    @media (max-width: 768px) {
-      .ser1 {
-        margin: 12px; 
-        padding: 10px; 
-        align-items: flex-start; 
-        justify-content: flex-start; 
-        height: auto; 
-        min-height: 100vh;
+    @keyframes serG12 {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
       }
-      
-      .ser2 {
-        max-width: 400px; 
-        margin: 0 auto;
+      70% {
+        transform: translateY(-5px) scale(1.02);
       }
-      
-      .ser6 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      
-      .ser7 {
-        padding: 20px 10px; 
-        min-height: 100px;
-      }
-      
-      .ser8 {
-        height: 50px; 
-        margin-bottom: 8px;
-      }
-      
-      .ser9 {
-        font-size: 12px; 
-        line-height: 1.2;
-      }
-      
-      .ser3 {
-        margin-bottom: 30px;
-      }
-      
-      .ser4 {
-        padding: 8px 20px; 
-        font-size: 14px;
-      }
-      
-      .ser5 {
-        font-size: 24px;
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
       }
     }
 
-    @media (max-width: 380px) {
-      .ser6 {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      
-      .ser7 {
-        padding: 15px 8px; 
-        min-height: 90px;
-      }
-      
-      .ser8 {
-        height: 45px;
-      }
-      
-      .ser9 {
-        font-size: 11px;
-      }
+    .serG4::before, .serG5::before, .serG6::before, .serG7::before, 
+    .serG8::before, .serG9::before, .serG10::before, .serG11::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* অ্যানিমেশন কমাতে পছন্দ করলে ব্যবহারকারীদের জন্য */
-    @media (prefers-reduced-motion: reduce) {
-      .ser7, .ser8, .ser9, .ser4, .ser5, .ser7::after, .ser1::before {
-        animation: none !important;
-      }
+    .serG4::after, .serG5::after, .serG6::after, .serG7::after, 
+    .serG8::after, .serG9::after, .serG10::after, .serG11::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      transition: left 0.7s ease;
     }
 
+    .serG4:hover, .serG5:hover, .serG6:hover, .serG7:hover, 
+    .serG8:hover, .serG9:hover, .serG10:hover, .serG11:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 98, 255, 0.2);
+      border-color: #8abfff;
+      background: linear-gradient(145deg, #ffffff, #e6f0ff);
+    }
 
+    .serG4:hover::after, .serG5:hover::after, .serG6:hover::after, .serG7:hover::after, 
+    .serG8:hover::after, .serG9:hover::after, .serG10:hover::after, .serG11:hover::after {
+      left: 100%;
+    }
 
+    .serG13, .serG14, .serG15, .serG16, .serG17, .serG18, .serG19, .serG20 {
+      position: relative;
+      margin-bottom: 15px;
+      z-index: 2;
+    }
+
+    .serG4 i, .serG5 i, .serG6 i, .serG7 i, .serG8 i, .serG9 i, .serG10 i, .serG11 i {
+      font-size: 40px;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+    }
+
+    .serG4:hover i, .serG5:hover i, .serG6:hover i, .serG7:hover i, 
+    .serG8:hover i, .serG9:hover i, .serG10:hover i, .serG11:hover i {
+      transform: scale(1.2) rotate(-5deg);
+    }
+
+    .serG4 h4, .serG5 h4, .serG6 h4, .serG7 h4, .serG8 h4, .serG9 h4, .serG10 h4, .serG11 h4 {
+      color: #0d1b3d;
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .serG4:hover h4, .serG5:hover h4, .serG6:hover h4, .serG7:hover h4, 
+    .serG8:hover h4, .serG9:hover h4, .serG10:hover h4, .serG11:hover h4 {
+      color: #0046d3;
+    }
+
+    .serG21, .serG22, .serG23, .serG24, .serG25, .serG26, .serG27, .serG28 {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 8px;
+      height: 8px;
+      background: #7db4ff;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .serG4:hover .serG21, .serG5:hover .serG22, .serG6:hover .serG23, .serG7:hover .serG24, 
+    .serG8:hover .serG25, .serG9:hover .serG26, .serG10:hover .serG27, .serG11:hover .serG28 {
+      opacity: 1;
+    }
+
+    .serG29, .serG30, .serG31, .serG32, .serG33, .serG34, .serG35, .serG36 {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+      z-index: 3;
+    }
+
+    .serG4:hover .serG29, .serG7:hover .serG32 {
+      transform: scale(1);
+    }
+
+    .serG37, .serG38, .serG39, .serG40, .serG41, .serG42, .serG43, .serG44 {
+      position: relative;
+      z-index: 2;
+    }
+
+    .serG45, .serG46, .serG47, .serG48, .serG49, .serG50, .serG51, .serG52 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 98, 255, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .serG4:hover .serG45, .serG5:hover .serG46, .serG6:hover .serG47, .serG7:hover .serG48, 
+    .serG8:hover .serG49, .serG9:hover .serG50, .serG10:hover .serG51, .serG11:hover .serG52 {
+      opacity: 1;
+    }
+
+    .serG4 i { color: #4a6fff; }
+    .serG5 i { color: #ff6b6b; }
+    .serG6 i { color: #6bcf7f; }
+    .serG7 i { color: #ffa94d; }
+    .serG8 i { color: #9d4edd; }
+    .serG9 i { color: #00b4d8; }
+    .serG10 i { color: #f72585; }
+    .serG11 i { color: #2a9d8f; }
 
 
 
