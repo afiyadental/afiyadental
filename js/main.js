@@ -642,5 +642,56 @@
             }, 100);
         });
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+      const serG53 = document.querySelectorAll('.serG4, .serG5, .serG6, .serG7, .serG8, .serG9, .serG10, .serG11');
+      
+      const serG54 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            serG54.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      serG53.forEach(card => {
+        serG54.observe(card);
+      });
+    });
 })(jQuery);
 
